@@ -18,7 +18,7 @@ Route::post('/register', 'App\Http\Controllers\RegisterController@post');
 Route::post('/login', 'App\Http\Controllers\LoginController@post');
 Route::post('/logout','App\Http\Controllers\LogoutController@post');
 Route::get('/user','App\Http\Controllers\UsersController@get');
-Route::put('/user','App\Http\Controllers\UserCOntroller@put');
+Route::put('/user','App\Http\Controllers\UsersCOntroller@put');
 Route::post('/like','App\Http\Controllers\LikesController@post');
 Route::delete('/like','App\Http\Controllers\LikesController@delete');
 Route::post('/comment','App\Http\Controllers\CommentsController@post');
