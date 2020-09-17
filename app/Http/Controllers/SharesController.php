@@ -53,7 +53,7 @@ class SharesController extends Controller
         $user = DB::table('users')->where('id', $item->user_id)->first();
         $comment = DB::table('comments')->where('share_id', $share->id)->get();
         $comment_data = array();
-        foreach($comment as $value) {
+        foreach ($comment as $value) {
             $comment_user = DB::table('users')->where('id', $value->user_id)->first();
             $comments = [
                 "comment" => $value,

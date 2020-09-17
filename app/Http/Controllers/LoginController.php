@@ -16,5 +16,6 @@ class LoginController extends Controller
         } else {
             return response()->json(['auth' => false], 200);
         }
+           
     }
 }
