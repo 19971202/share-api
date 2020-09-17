@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('/shares', 'App\Http\Controllers\SharesController');
+Route::apiResource('shares', 'App\Http\Controllers\SharesController'::class);
 Route::post('/register', 'App\Http\Controllers\RegisterController@post');
 Route::post('/login', 'App\Http\Controllers\LoginController@post');
 Route::post('/logout','App\Http\Controllers\LogoutController@post');
