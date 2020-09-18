@@ -25,7 +25,7 @@ class SharesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -37,13 +37,13 @@ class SharesController extends Controller
         return response()->json([
             'message' => 'Share created successfully',
             'data' => $item
-        ], 200);
+        ],200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Share $share
+     * @param  \App\Models\Share  $share
      * @return \Illuminate\Http\Response
      */
     public function show(Share $share)
@@ -83,18 +83,19 @@ class SharesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Share $share
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Share  $share
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Share $share)
     {
         //
     }
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Share $share
+     * @param  \App\Models\Share  $share
      * @return \Illuminate\Http\Response
      */
     public function destroy(Share $share)
