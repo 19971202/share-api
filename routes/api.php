@@ -1,6 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SharesController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\LikesController;
+use App\Http\Controllers\CommentsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +21,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('/shares', 'App\Http\Controllers\SharesController'::class);
-Route::post('/register', 'App\Http\Controllers\RegisterController@post');
-Route::post('/login', 'App\Http\Controllers\LoginController@post');
-Route::post('/logout','App\Http\Controllers\LogoutController@post');
-Route::get('/user','App\Http\Controllers\UsersController@get');
-Route::put('/user','App\Http\Controllers\UsersController@put');
-Route::post('/like','App\Http\Controllers\LikesController@post');
-Route::delete('/like','App\Http\Controllers\LikesController@delete');
-Route::post('/comment','App\Http\Controllers\CommentsController@post');
-
+Route::apiResource('/shares', SharesController::class);
+Route::post('/register', [RegisterController::class, 'post']);
+Route::post('/login', [LoginController::class, 'post']);
+Route::post('/logout', [LogoutController::class, 'post']);
+Route::get('/user', [UsersController::class, 'get']);
+Route::put('/user', [UsersController::class, 'put']);
+Route::post('/like', [LikesController::class, 'post']);
+Route::delete('/like', [LikesController::class, 'delete']);
+Route::post('/comment', [CommentsController::class, 'post']);

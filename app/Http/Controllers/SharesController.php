@@ -50,9 +50,19 @@ class SharesController extends Controller
     {
         $item = Share::where('id', $share->id)->first();
         $like = DB::table('likes')->where('share_id', $share->id)->get();
-        $user = DB::table('users')->where('id', $item->user_id)->first();
+        $user_id = $item->user_id;
+        $user = DB::table('users')->where('id', (int)$user_id)->first();
         $comment = DB::table('comments')->where('share_id', $share->id)->get();
         $comment_data = array();
+        if (empty($comment->toArray())) {
+            $items = [
+                "item" => $item,
+                "like" => $like,
+                "comment" => $comment_data,
+                "name" => $user->name,
+            ];
+            return response()-> json($items, 200);
+        }
         foreach ($comment as $value) {
             $comment_user = DB::table('users')->where('id', $value->user_id)->first();
             $comments = [
